@@ -4,7 +4,7 @@ var shell = require('shelljs');
 // shell.config.execPath = process.execPath;
 
 
-$("#compile").click(function(){
+$("#upload").click(function(){
     var deviceList = $("#devices_list")[0];
     var deviceName = deviceList.options[deviceList.selectedIndex].value;
     var compileCommand = '/Applications/Arduino.app/Contents/Java/hardware/tools/avr/bin/avrdude -C/Applications/Arduino.app/Contents/Java/hardware/tools/avr/etc/avrdude.conf -v -pm328p -carduino -b115200  -P/dev/' + deviceName +' -Uflash:w:./arduino_files/test_led/build-uno/test_led.hex:i -carduino';
